@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <hello-world
+      :msg="message"
+      :age="age">
+    </hello-world>
   </div>
 </template>
 
@@ -13,10 +16,12 @@ export default {
   components: {
     HelloWorld
   },
+  // 复用代码的主要方式是使用 mixins
   // 全局混入
   mixins: [mixinTest1, mixinTest2, mixinTest3, mixinTest4],
   data() {
     return {
+      age: 11,
       message: "goodbye",
       bar: "def",
       myOption: "hello!"

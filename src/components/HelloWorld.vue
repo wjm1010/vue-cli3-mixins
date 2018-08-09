@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h1>{{ age }}</h1>
   </div>
 </template>
 
@@ -9,7 +10,15 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
-    default: true
+    default: false,
+    age: {
+      type: Number,
+      default: 0,
+      required: true,
+      validator: function(value) {
+        return value >= 0;
+      }
+    }
   }
 };
 </script>
