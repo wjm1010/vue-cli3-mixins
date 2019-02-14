@@ -29,7 +29,6 @@ export default {
   },
   created() {
     console.log("组件钩子被调用");
-    this.fn();
     this.bars();
     this.conflicting();
   },
